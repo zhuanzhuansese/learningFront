@@ -1,64 +1,13 @@
-<h1>video</h1>
-<h6>video tag support Ogg/MPEG 4/WebM sources</h6>
-<div>
-    <button onclick="playPause()">play/pause</button>
-    <button onclick="makeBig()">big</button>
-    <button onclick="makeNormal()">medium</button>
-    <button onclick="makeSmall()">small</button>
-    <button onclick="mute()">mute/unmute</button>
-</div>  
-<video id="video" width="320" height="240" controls="controls" loop="loop">
-  <source src="http://www.w3school.com.cn/example/html5/mov_bbb.mp4" type="video/ogg">
-Your browser does not support the video tag.
-</video>
-    
-<h1><a href="http://www.w3school.com.cn/html5/html_5_audio.asp">audio</a></h1>
-<audio controls="controls" src="http://www.w3school.com.cn/i/song.mp3">Your broswer does not support audio tag</audio>
-    
 <h1>draggable</h1>
-    <div>
-        <img id="img1" draggable="true" ondragstart="drag(event)" src="src/1.jpg" height="240"/>
-        <img id="img2" draggable="true" ondragstart="drag(event)" src="src/2.jpg" height="240"/>
+<div>
+        <img id="img1" ng-click="debug()" draggable="true" ondragstart="drag(event)" src="src/1.jpg" height="240"/>
+        <img id="img2" draggable="true" ng-drag ondragstart="drag(event)" src="src/2.jpg" height="240"/>
         <img id="img3" draggable="true" ondragstart="drag(event)" src="src/3.jpg" height="240"/>
         <img id="img4" draggable="true" ondragstart="drag(event)" src="src/4.jpg" height="240"/>
-    </div>
-    <div>
-        <div id="div1" class="divBox" ondrop="drop(event)" ><p>1</p></div>
-        <div id="div2" class="divBox" ondrop="drop(event)" ondragover="allowDrop(event)"><p>2</p></div>
-        <div id="div3" class="divBox" ondrop="drop(event)" ondragover="allowDrop(event)"><p>3</p></div>
-        <div id="div4" class="divBox" ondrop="drop(event)" ondragover="allowDrop(event)"><p>4</p></div>
-    </div>
-<script type="text/javascript">
-    var myVideo=document.getElementById("video");
-    function playPause(){
-       if(myVideo.paused)
-           myVideo.play();
-        else
-            myVideo.pause();
-    }
-    function makeBig(){
-        myVideo.width=560;
-    }
-    function makeNormal(){
-        myVideo.width=420;
-    }
-    function makeSmall(){
-        myVideo.width=320;
-    }
-    function mute(){
-        myVideo.muted=!myVideo.muted;
-    }
-    function drag(ev){
-        ev.dataTransfer.setData("Text",ev.target.id);
-    }
-    function drop(ev)
-    {
-        ev.preventDefault();
-        var data=ev.dataTransfer.getData("Text");
-        ev.target.appendChild(document.getElementById(data));
-    }
-    function allowDrop(ev)
-    {
-        ev.preventDefault();
-    }
-</script>
+</div>
+<div class="container">
+        <div id="div1" class="divBox" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="div2" class="divBox" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="div3" class="divBox" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="div4" class="divBox" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+</div>

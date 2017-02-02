@@ -1,0 +1,10 @@
+.container{
+    height:auto;
+    width:100%;
+}
+.divBox{
+    border: 1px black solid;
+    height:350px;
+    width:400px;
+    display:inline-block;
+}

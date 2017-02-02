@@ -1,0 +1,34 @@
+<h1>video</h1>
+<h6>video tag support Ogg/MPEG 4/WebM sources</h6>
+<div>
+    <button onclick="playPause()">play/pause</button>
+    <button onclick="makeBig()">big</button>
+    <button onclick="makeNormal()">medium</button>
+    <button onclick="makeSmall()">small</button>
+    <button onclick="mute()">mute/unmute</button>
+</div>  
+<video id="video" width="320" height="240" controls="controls" loop="loop">
+  <source src="http://www.w3school.com.cn/example/html5/mov_bbb.mp4" type="video/ogg">
+Your browser does not support the video tag.
+</video>
+<script>
+var myVideo=document.getElementById("video");
+    function playPause(){
+       if(myVideo.paused)
+           myVideo.play();
+        else
+            myVideo.pause();
+    }
+    function makeBig(){
+        myVideo.width=560;
+    }
+    function makeNormal(){
+        myVideo.width=420;
+    }
+    function makeSmall(){
+        myVideo.width=320;
+    }
+    function mute(){
+        myVideo.muted=!myVideo.muted;
+    }
+</script>

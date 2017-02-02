@@ -1,4 +1,4 @@
-app.directive('d3Demo',function(){
+angular.module('myApp').directive('d3Demo',function(){
 var width = 960,
     height = 800;
 var nodes = [],
@@ -62,8 +62,7 @@ for (i = 1; i < nodes.length-2; i++){
 
 };
 
-var force=d3.layout.force()
-			.size([width,height]).nodes(nodes).links(links).linkDistance(100).linkStrength(0.01).gravity(0).on("tick",tick);
+var force=d3.layout.force()			.size([width,height]).nodes(nodes).links(links).linkDistance(100).linkStrength(0.01).gravity(0).on("tick",tick);
 force.start();
 
 var svg = d3.select("body").append("svg:svg").attr("width",width).attr("height",height);
